@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Comforter&family=Erica+One&display=swap');
+
+
+body{
+    background-color: #1C2833;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+.First{
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.YellowBG{
+    top: 0;
+    right: 0;
+    /* background-image: url('Images/yellowbg.svg'); */
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.GreenBG{
+    top: 0;
+    right: 0;
+    background-image: url('Images/greenbg.svg');
+    width: 100vw;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-position: right;
+}
+
+.ItsLogo{
+    position: absolute;
+    background-image: url('Images/logo.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: width 2s, height 5s;
+}
+
+.ItsLogoBefore{
+    top: 0vh;
+    left: 5vw;
+    width: 50vw;
+    height: 70vh;
+}
+
+.ItsLogoAfter{
+    top: 0vh;
+    left: 5vw;
+    width: 12vw;
+    height: 22vh;
+}
+
+
+.ItsGod{
+    position: absolute;
+    background-image: url('Images/God.svg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: width 2s, height 5s, left 0.5s, top 0.7s;
+}
+
+.ItsGodBefore{
+    top: 65vh;
+    left: 50vw;
+    width: 15vw;
+    height: 50vh;
+}
+
+.ItsGodAfter{
+    top: 0vh;
+    left: 18vw;
+    width: 14vw;
+    height: 22vh;
+}
+
+
+.Slide{
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+}
+
+#Second{
+    margin-top: 100vw;
+}
+
+.Hide{
+    display: none;
+}
+
+.Show{
+    display: block;
+}
+
+
+.FFBox{
+    position: fixed;
+    left: 10vw;
+    top: 40vh;
+    width: 40vw;
+    height: 30vh;
+    
+}
+
+.FFTextBox{
+
+}
+
+.FFTextBoxHeader{
+    color: #D4AC0D;
+    font-family: 'Comforter', cursive;
+    font-size: 35pt;
+    font-weight: bold;
+    text-shadow: 5px 5px 5px grey;
+}
+
+.FFTextBoxDetails{
+
+}
+
+.FFTextBoxClick{
+
+}
+
+.OnHideFFBox{
+    animation-name: HideTheFFBox;
+    animation-duration: 1s;
+}
+
+@keyframes HideTheFFBox {
+    0%   {
+        width:  40vw;
+        height: 30vh;
+        left: 10vw;
+        top: 40vh;
+        opacity: 1;
+    }
+
+
+    100% {
+        width:  40vw;
+        height: 30vh;
+        left: 5vw;
+        top: 35vh;
+        opacity: 0;
+    }
+  }
+
+.OnShowFFBox{
+    animation-name: ShowTheFFBox;
+    animation-duration: 0.5s;
+}
+
+
+@keyframes ShowTheFFBox {
+    0%   {
+        width:  40vw;
+        height: 30vh;
+        left: 5vw;
+        top: 35vh;
+        opacity: 0;
+    }
+
+
+    100% {
+        width:  40vw;
+        height: 30vh;
+        left: 10vw;
+        top: 40vh;
+        opacity: 1;
+    }
+  }

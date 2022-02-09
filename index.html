@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body id="body" onscroll="OnScroll()">
+    <div id="First" class="First" style="height:400px">
+        <div id="ItsLogo" class="ItsLogo ItsLogoBefore">
+            
+        </div>
+        <div id="ItsGod" class="ItsGod ItsGodBefore">
+
+        </div>
+        <div class="YellowBG">
+            <div class="GreenBG">
+            </div>
+        </div>
+    </div>
+    <div id="Second" class="Slide">
+       Second
+    </div>
+    <div id="Third" class="Slide Hide">
+       Third
+    </div>
+
+    <div id="Fourth" class="Slide Hide">
+        Fourth
+    </div>
+
+    <div id="Fifth" class="Slide Hide">
+        Fifth
+    </div>
+
+    <div id="Sixth" class="Slide Hide">
+        Sixth
+    </div>
+
+
+    <script>
+        var body = document.getElementById("body");
+        var ItsLogo = document.getElementById("ItsLogo");
+        var ItsGod = document.getElementById("ItsGod");
+
+        var oldSlide = -1;
+        var currentSlide = 0;
+
+        var Second = document.getElementById("Second");
+        var Third = document.getElementById("Third");
+        var Fourth = document.getElementById("Fourth");
+        var Fifth = document.getElementById("Fifth");
+        var Sixth = document.getElementById("Sixth");
+
+        
+        var FFBox = document.createElement("div");
+        FFBox.id = "FFBOX";
+        FFBox.classList.add("FFBox");
+        document.getElementById("body").appendChild(FFBox);
+
+        
+        function OnScroll(){
+            //console.log(Second.scrollHeight + " " + Second.scrollTop + " " + Second.clientTop + " " + Second.offsetTop + " " + this.scrollY + " " + window.outerHeight);
+
+            currentSlide = parseInt(this.scrollY / Second.scrollHeight);
+            console.log(currentSlide);
+            if(oldSlide != currentSlide)
+            {
+                console.log("Slide Changed");
+                Change_Slide(currentSlide);
+            }
+            oldSlide = currentSlide;
+        }
+
+        function Change_Slide(slidenumber){
+                if(slidenumber == 0)
+                {
+                    ForFirst();
+                }
+                else if(slidenumber == 1)
+                {
+                    Second.classList.remove("Hide");
+                    Second.classList.add("Show");
+
+                    ForSecond();
+                }
+                else if(slidenumber == 2)
+                {
+                    Third.classList.remove("Hide");
+                    Third.classList.add("Show");
+                }
+                else if(slidenumber == 3)
+                {
+                    Fourth.classList.remove("Hide");
+                    Fourth.classList.add("Show");
+                }
+                else if(slidenumber == 4)
+                {
+                    Fifth.classList.remove("Hide");
+                    Fifth.classList.add("Show");
+                }
+                else if(slidenumber == 5)
+                {
+                    Sixth.classList.remove("Hide");
+                    Sixth.classList.add("Show");
+                }
+
+            
+        }
+
+        function ForFirst(){
+            
+            ResizeLogo_OnScroll();
+            window.scrollTo(0, Second.scrollHeight);
+            slidenumber = 1;
+            Change_Slide(slidenumber);
+
+        }
+
+        function ForSecond(){
+            FFBox.classList.remove("OnShowFFBox");
+            FFBox.classList.add("OnHideFFBox");
+
+                setTimeout(function()
+                {
+                    FFBox.innerHTML = "";
+
+                    FFBox.classList.remove("OnHideFFBox");
+                    FFBox.classList.add("OnShowFFBox");
+
+                    FFBox = document.getElementById("FFBOX");
+                
+                    var FFTextBox = document.createElement("div");
+                    FFTextBox.classList.add("FFTextBox");
+                    
+                        var FFTextBoxHeader = document.createElement("div");
+                        FFTextBoxHeader.classList.add("FFTextBoxHeader");
+                        FFTextBoxHeader.innerText = "Employee Provident Fund Services";
+    
+                        var FFTextBoxDetails = document.createElement("div");
+                        FFTextBoxDetails.classList.add("FFTextBoxDetails");
+                        FFTextBoxDetails.innerText = "The Employees’ Provident Fund and Miscellaneous Provisions Act 1952 applies to the Factories engaged in Industries specified in Schedule I of the Act or to other establishments notified and engaging 20 or more employees. To facilitate easy compliance by the Big Industries, Micro, Small and Medium Enterprises (MSME), other Establishments EPFO has provided online facilities starting from the registration of the Establishments, filing of monthly returns integrated with online payment of the contributions and charges. The process for all the online facilities are explained through well illustrated documents and FAQs and even the probable entrepreneurs can visit the site and collect the information.";
+
+                        var FFTextBoxClick = document.createElement("a");
+                        FFTextBoxClick.classList.add("FFTextBoxClick");
+                        FFTextBoxClick.innerText = "Take the Service";
+
+                    FFTextBox.appendChild(FFTextBoxHeader);
+                    FFTextBox.appendChild(FFTextBoxDetails);
+                    FFTextBox.appendChild(FFTextBoxClick);
+
+                    FFBox.appendChild(FFTextBox);
+                }, 1000);
+                
+        }
+        
+        function ResizeLogo_OnScroll(){
+            ItsLogo.classList.remove("ItsLogoBefore");
+            ItsLogo.classList.add("ItsLogoAfter");
+
+            ItsGod.classList.remove("ItsGodBefore");
+            ItsGod.classList.add("ItsGodAfter");
+
+        }
+    </script>
+
+</body>
+</html>
